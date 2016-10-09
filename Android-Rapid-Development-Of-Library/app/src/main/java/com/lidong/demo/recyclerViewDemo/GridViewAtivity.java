@@ -25,7 +25,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lidong.android_ibrary.PullToRefresh.PtrClassicFrameLayout;
 import com.lidong.android_ibrary.PullToRefresh.PtrDefaultHandler;
 import com.lidong.android_ibrary.PullToRefresh.PtrFrameLayout;

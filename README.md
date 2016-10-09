@@ -1,5 +1,8 @@
 # Android-Rapid-Development-Of-Library
-Android 快速开发库，主要想实现一条属于自己的开发框架。包括网络访问，数据，UI等等
+Android 快速开发库，主要想实现一条属于自己的开发框架。包括网络访问，数据，UI等,将该项目分为四个模块，UI界面、网络、进阶、综合。
+
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ%E5%9B%BE%E7%89%8720160415174319.jpg)
+
 #CircleProgressView 圆形进度条的实现
 ![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/Screenshot_20160301-171616.png?raw=true)
 #Android中MVP+RxJava+Retrofit2.0的整合
@@ -31,3 +34,9 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 ![这里写图片描述](http://img.blog.csdn.net/20160323115759760)     ![这里写图片描述](http://img.blog.csdn.net/20160323115734260)
 #Android ExpandableListView的嵌套ListView实现使用客户通讯录
 ![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ%E5%9B%BE%E7%89%8720160412173608.jpg)
+
+#Android 百度地图的简单实用
+![](http://lbc.baidu.com/static/cms/images/android_dev2.jpg)
+
+#Android 实现答题器功能（通过手势实现翻页效果）
+![这里写图片描述](http://img.blog.csdn.net/20160503164536388)   ![这里写图片描述](http://img.blog.csdn.net/20160503164602992)

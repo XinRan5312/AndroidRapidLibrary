@@ -1,6 +1,9 @@
 package com.lidong.demo.mvp.api;
 
+import com.lidong.demo.mvp.bean.DreamData;
 import com.lidong.demo.mvp.bean.WeatherData;
+import com.lidong.demo.mvp.bean.WinXinData;
+
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -14,7 +17,9 @@ import rx.Observable;
 * @email : lidong@chni.com.cn
 **/
 public class ApiManager {
-
+    /**
+     * 基础地址
+     */
     private static final String ENDPOINT = "http://v.juhe.cn";
 
     private static final Retrofit sRetrofit = new Retrofit.Builder()
@@ -34,8 +39,27 @@ public class ApiManager {
         Observable<WeatherData> ss = apiManager.getWeatherData(format, city, "ad1d20bebafe0668502c8eea5ddd0333");
         return  ss;
     }
+    /**
+     * 获取周公解梦类型
+     * @param key
+     * @return
+     */
+    public static  Observable<DreamData> getDreamData(String key) {
+        Observable<DreamData> ss = apiManager.getDreamData(key);
+        return  ss;
+    }
 
 
-
+    /**
+     * 获取微信咨询
+     * @param pno
+     * @param ps
+     * @param key
+     * @return
+     */
+    public static  Observable<WinXinData> getWeiXinData(int pno, String ps, String key) throws Exception {
+        Observable<WinXinData> ss = apiManager.getWinXinNewData(pno,ps,key);
+        return  ss;
+    }
 
 }

@@ -13,7 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lidong.android_ibrary.PullToRefresh.loadmore.OnLoadMoreListener;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.SwipeRefreshHelper;
 import com.lidong.demo.R;
@@ -98,25 +97,6 @@ public class SwipeListViewActivity extends AppCompatActivity{
         });
 
     }
-
-    SwipeRefreshHelper.OnSwipeRefreshListener mOnSwipeRefreshListener = new SwipeRefreshHelper.OnSwipeRefreshListener() {
-        @Override
-        public void onfresh() {
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mDatas.clear();
-                    page = 0;
-                    for (int i = 0; i < 17; i++) {
-                        mDatas.add(new String("  SwipeListView item  -" + i));
-                    }
-                    mAdapter.notifyDataSetChanged();
-                    mSwipeRefreshHelper.refreshComplete();
-                    mSwipeRefreshHelper.setLoadMoreEnable(true);
-                }
-            }, 1000);
-        }
-    };
 
 
     public class ListViewAdapter extends BaseAdapter {

@@ -1,10 +1,8 @@
 package com.lidong.demo.mvp_dagger2;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
 import com.lidong.demo.AppComponent;
@@ -23,8 +21,6 @@ import butterknife.ButterKnife;
 
 public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp_dagger2.WeatherView{
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)
@@ -50,7 +46,7 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
+        setContentView(R.layout.content_weather);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         mWeatherPresenter.getWeatherData("2", "苏州");
@@ -74,6 +70,7 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
     @Override
     public void hideProgress() {
         LoadingUIHelper.hideDialogForLoading();
+        Toast.makeText(this,"你的免费数据已经用完",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -87,5 +84,12 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
         textView7.setText("紫外线强度："+weatherData.getResult().getToday().getUv_index());
         textView8.setText("穿衣建议："+weatherData.getResult().getToday().getDressing_advice());
         textView9.setText("旅游指数："+weatherData.getResult().getToday().getTravel_index());
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mWeatherPresenter.onUnsubscribe();
     }
 }

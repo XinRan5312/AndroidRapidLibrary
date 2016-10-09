@@ -55,7 +55,7 @@ public class RecyclerViewHandler implements ViewHandler {
         }
 
         @Override
-        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+        public void onScrollStateChanged(android.support.v7.widget.RecyclerView recyclerView, int newState) {
             if (newState == RecyclerView.SCROLL_STATE_IDLE && isScollBottom(recyclerView)) {
                 if (onScrollBottomListener != null) {
                     onScrollBottomListener.onScorllBootom();
@@ -76,7 +76,7 @@ public class RecyclerViewHandler implements ViewHandler {
         }
 
         @Override
-        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+        public void onScrolled(android.support.v7.widget.RecyclerView recyclerView, int dx, int dy) {
 
         }
 
